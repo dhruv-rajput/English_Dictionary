@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Awesome Search Box</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<style>
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+
+body,html{
+    height: 90%;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 200px;
+    background: #e74c3c !important;
+    }
+
+    .searchbar{
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 60px;
+    background-color: #353b48;
+    border-radius: 30px;
+    padding: 10px;
+    }
+
+    .search_input{
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color:transparent;
+    line-height: 40px;
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_input{
+    padding: 0 10px;
+    width: 450px;
+    caret-color:red;
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_icon{
+    background: white;
+    color: #e74c3c;
+    }
+
+    .search_icon{
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:white;
+    text-decoration:none;
+    }
+  
+    h1 { font-family: 'Brush Script MT', Brush Script Std, cursive;
+    color: #353b48; 
+    line-height: 1.25; 
+    margin: 20px 0 10px; 
+    font-size: 60px; 
+    font-weight: bold; 
+    text-align: center;}
+    h3 { font-family: 'Brush Script MT', Brush Script Std, cursive;
+    color: #353b48; 
+    line-height: 1.25; 
+    margin: 20px 0 10px; 
+    padding:10px ;
+    font-size: 30px; 
+    font-weight: bold; 
+    text-align: center;}
+</style>
+</head>
+<body>
+  <h1>WELCOME TO ENGLISH DICTIONARY</h1>
+  <div class="container h-100">
+   
+    
+    <div class="d-flex justify-content-center h-100">
+      
+      <form  class="searchbar" action="word">
+      
+        <input class="search_input" type="text" name="search" placeholder="Search...">
+        <a href="" class="search_icon"><i class="fas fa-search"></i></a>
+      
+      </form>
+      
+   
+    </div>
+    <h3>Meaning: {{meaning}}</h3>
+   
+   <h3>Synonyms: {% for synonym in synonyms %}
+       {{synonym}},
+       {% endfor %}</h3>
+   
+   
+   <h3>Antonyms: {% for antonym in antonyms %}
+       {{antonym}},
+       {% endfor %}</h3>
+  </div>
+  
+</body>
+</html>
